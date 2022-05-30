@@ -12,7 +12,7 @@ main {
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #BABABA;
-  width: 600px;
+  width: 500px;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -20,6 +20,7 @@ main {
 
 img {
   width: 80px;
+  margin-bottom: 70px;;
 }
 
 input {
@@ -28,7 +29,6 @@ input {
   width: 400px;
   height: 30px;
   padding: 0 5px;
-  margin-top: 80px;
 }
 
 ::placeholder {
@@ -36,8 +36,8 @@ input {
 }
 
 button {
-  color: #2894FF;
-  border: 1px solid #2894FF;
+  color: #4891db;
+  border: 1px solid #4891db;
   background-color: white;
   padding: 8px 0;
   margin: 15px 90px;
@@ -45,11 +45,32 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: #2894FF;
+  background-color: #4891db;
   color: white;
 }
 
 #url-input {
   display: flex;
   flex-flow: column wrap;
+}
+
+#short-url {
+  width: 400px;
+}
+
+#short-url p {
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 5px;
+}
+
+#short-url a {
+  color: #4891db;
+  text-decoration: none;
+}
+
+#copy-button {
+  padding: 8px 20px;
+  background-color: #4891db;
+  color: white;
 }

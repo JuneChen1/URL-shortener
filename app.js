@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   console.log('url', req.body.url)
-  res.render('index')
+  res.render('shorturl')
 })
 
 app.listen(port, () => {
