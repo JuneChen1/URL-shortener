@@ -13,7 +13,6 @@ main {
   padding: 20px;
   border: 1px solid #BABABA;
   width: 600px;
-  height: 500px;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -21,4 +20,36 @@ main {
 
 img {
   width: 80px;
+}
+
+input {
+  background-color: #F5F5F5;
+  border: 1px solid #F5F5F5;
+  width: 400px;
+  height: 30px;
+  padding: 0 5px;
+  margin-top: 80px;
+}
+
+::placeholder {
+  color: #BABABA;
+}
+
+button {
+  color: #2894FF;
+  border: 1px solid #2894FF;
+  background-color: white;
+  padding: 8px 0;
+  margin: 15px 90px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #2894FF;
+  color: white;
+}
+
+#url-input {
+  display: flex;
+  flex-flow: column wrap;
 }

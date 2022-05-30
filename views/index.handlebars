@@ -1,0 +1,13 @@
+<form action="/" method="POST">
+  <div id="url-input">
+    <input type="url" name="url" placeholder="input URL here" onfocus="input()" required>
+
+    <script>
+      function input() {
+        document.querySelector('#url-input input').value = 'https://'
+      }
+    </script>
+
+    <button type="submit">Shorten</button>
+  </div>
+</form>
