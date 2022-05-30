@@ -1,5 +1,13 @@
 <div id="short-url">
   <p>Success! Please use this link:</p>
-  <a href="" target="_black">https://</a>
+  <a href="" target="_black"><span>https://</span></a>
 </div>
-<button id="copy-button">Copy</button>
+<button id="copy-button" onclick="copy()">Copy</button>
+
+<script>
+  function copy() {
+    const url = document.querySelector('#short-url a span').innerText
+    navigator.clipboard.writeText(url)
+    document.execCommand('copy')
+  }
+</script>
