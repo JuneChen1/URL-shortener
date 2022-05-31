@@ -20,8 +20,16 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   const originURL = req.body.url
-  const shortURL = generateshortURL
-  ShortURL.create({ origin_URL: originURL, short_URL: shortURL})
+  let shortURL = generateshortURL
+  ShortURL.findOne({ origin_URL: originURL })
+    .then(data => {
+      if (!data) {
+        ShortURL.create({ origin_URL: originURL, short_URL: shortURL })
+      } else {
+        // 輸入相同網址時，產生一樣的縮址
+        shortURL = data.short_URL
+      }
+    })
     .then(res.render('shorturl', { shortURL }))
     .catch(error => console.log(error))
 })
