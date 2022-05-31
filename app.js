@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const generateshortURL = require('./generateshortURL')
+
 const exphbs = require('express-handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -14,8 +16,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  console.log('url', req.body.url)
-  res.render('shorturl')
+  const shortURL = generateshortURL
+  res.render('shorturl', { shortURL })
 })
 
 app.listen(port, () => {
