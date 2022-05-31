@@ -13,19 +13,19 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log(req.body)
   const originURL = req.body.url
-  let shortURL = generateshortURL
+  let shortURL = generateshortURL(5)
   ShortURL.findOne({ origin_URL: originURL })
     .then(data => {
       if (!data) {
+        //shortURL = generateshortURL(5)
         ShortURL.create({ origin_URL: originURL, short_URL: shortURL })
       } else {
         // 輸入相同網址時，產生一樣的縮址
         shortURL = data.short_URL
       }
     })
-    .then(res.render('shorturl', { shortURL: `${req.headers.origin}/${shortURL}`, originURL }))
+    .then(() => res.render('shorturl', { shortURL: `${req.headers.origin}/${shortURL}`, originURL }))
     .catch(error => console.log(error))
 })
 
