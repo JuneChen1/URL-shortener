@@ -1,5 +1,7 @@
 # 短網址產生器
 將較長的網址縮減成短網址。
+## 網站畫面
+![shorturl](https://user-images.githubusercontent.com/103798145/171141619-5682222b-600c-4716-abf8-fea83a3a4837.jpg)
 ## 功能說明
 + 輸入網址轉換成短網址
 + 點擊 Copy 按鈕複製網址
