@@ -4,7 +4,7 @@ const ShortURL = require('../../models/shortURL')
 const generateshortURL = require('../../generateshortURL')
 
 const bodyParser = require('../../node_modules/body-parser')
-router.use(bodyParser.urlencoded({ extended: true}))
+router.use(bodyParser.urlencoded({ extended: true }))
 
 router.use(express.static('public'))
 
@@ -18,7 +18,6 @@ router.post('/', (req, res) => {
   ShortURL.findOne({ origin_URL: originURL })
     .then(data => {
       if (!data) {
-        //shortURL = generateshortURL(5)
         ShortURL.create({ origin_URL: originURL, short_URL: shortURL })
       } else {
         // 輸入相同網址時，產生一樣的縮址
