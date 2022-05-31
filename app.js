@@ -8,6 +8,8 @@ const exphbs = require('express-handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
+require('./config/mongoose')
+
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 
