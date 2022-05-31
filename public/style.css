@@ -79,3 +79,8 @@ button:hover {
   background-color: #4891db;
   color: white;
 }
+
+#error {
+  margin-bottom: 50px;
+  font-weight: 400;
+}

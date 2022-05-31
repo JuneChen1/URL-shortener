@@ -30,10 +30,24 @@ app.post('/', (req, res) => {
         shortURL = data.short_URL
       }
     })
-    .then(res.render('shorturl', { shortURL }))
+    .then(res.render('shorturl', { shortURL: `https://localhost:${port}/${shortURL}`, originURL }))
+    .catch(error => console.log(error))
+})
+
+app.get('/:shortURL', (req, res) => {
+  const shortURL = req.params.shortURL
+  ShortURL.findOne({ short_URL: shortURL })
+    .then(data => {
+      if (!data) {
+        res.render('error', { URL: `https://localhost:${port}/${shortURL}`})
+      } else {
+        res.redirect(data.origin_URL)
+      }
+    })
     .catch(error => console.log(error))
 })
 
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
 })
+app.listen()

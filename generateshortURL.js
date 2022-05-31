@@ -6,7 +6,7 @@ function shortURL(array) {
     const index = Math.floor(Math.random() * array.length)
     shortURL += array[index]
   }
-  return 'http://shortURL/' + shortURL
+  return shortURL
 }
 
 module.exports = shortURL(data)
