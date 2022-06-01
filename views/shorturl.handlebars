@@ -8,7 +8,6 @@
   function copy() {
     const url = document.querySelector('#short-url a span').innerText
     navigator.clipboard.writeText(url)
-    document.execCommand('copy')
     alert('Copied Successfully！')
   }
 </script>
