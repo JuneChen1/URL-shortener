@@ -1,4 +1,4 @@
-const data = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('')
+const data = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 function shortURL (length) {
   let shortURL = ''
   for (let i = 0; i < length; i++) {
